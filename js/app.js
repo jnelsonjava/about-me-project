@@ -65,5 +65,74 @@ console.log(educationMessage);
 
 
 
+var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n)').toLowerCase();
+
+var workHistoryMessage;
+if (userInterestedInWorkHistory === 'y') {
+  workHistoryMessage = 'I\'m flattered. Let me see what I can put together for you';
+} else if (userInterestedInWorkHistory === 'n') {
+  workHistoryMessage = 'No problem, moving on...';
+} else {
+  workHistoryMessage = failedAnswerMessage;
+}
+
+console.log(workHistoryMessage);
+// alert(workHistoryMessage);
+
+
+
+var userInterestedInHobbies = prompt('Would you like to know about my personal hobbies? (y/n)').toLowerCase();
+
+var hobbiesMessage;
+if (userInterestedInHobbies === 'y') {
+  hobbiesMessage = 'Cool, I\'m excited to share my interests with you!';
+} else if (userInterestedInHobbies === 'n') {
+  hobbiesMessage = 'Sure, let\'s keep it simple.';
+} else {
+  hobbiesMessage = failedAnswerMessage;
+}
+
+console.log(hobbiesMessage);
+// alert(hobbiesMessage);
+
+
+
+var userInterestedInPet = prompt('Would you like to know about my personal hobbies? (y/n)').toLowerCase();
+
+// adding a possibility that the user did not want to see anything
+// true only if they answered 'n' to everything'
+// used this thread as a guide for formatting, though it is geared towards Java,
+// I thought it looked good:  https://stackoverflow.com/questions/12791614/code-formatting-dealing-with-long-invocations-operations-and-boolean-logic
+var badSport = (
+  userInterestedInBackground === 'n' &&
+  userInterestedInEducation === 'n' &&
+  userInterestedInWorkHistory === 'n' &&
+  userInterestedInHobbies === 'n' &&
+  userInterestedInPet === 'n'
+);
+// console.log(badSport);
+
+var petMessage;
+if (badSport) {
+  petMessage = 'You know what, ' + userName + '? You\'ve answered no to everything. I\'m just going to give you all the info and leave you to it. Jeez, some people...';
+} else if (userInterestedInPet === 'y') {
+  petMessage = userName + ', you just made my day.';
+} else if (userInterestedInPet === 'n') {
+  petMessage = 'Well, I\'m showing you a picture of my cat anyways.';
+} else {
+  petMessage = failedAnswerMessage;
+}
+
+console.log(petMessage);
+// alert(petMessage);
+
+
+
+
+
+
+
+
+
 
 
