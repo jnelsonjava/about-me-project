@@ -8,4 +8,5 @@ Building a webpage designed for a user to learn about me, the author.
 
 ### Links and Resources
 
-  - 
+  - [Template used for README](https://codefellows.github.io/code-201-guide/curriculum/class-02/README-template.html)
+  
