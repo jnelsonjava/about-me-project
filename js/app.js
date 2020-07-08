@@ -24,8 +24,8 @@ The responses to the questions will be along the lines of
 var userName = prompt('Welcome to a page about the author of the page. First, what\'s your name?');
 var welcomeMessage = 'Welcome, ' + userName + '! I just have a few questions to make sure you get the information you want.';
 
-console.log(welcomeMessage);
-// alert(welcomeMessage);
+// console.log(welcomeMessage);
+alert(welcomeMessage);
 
 
 // saving a message to serve the user in case their responses weren't valid
@@ -44,8 +44,8 @@ if (userInterestedInBackground === 'y') {
   backgroundMessage = failedAnswerMessage;
 }
 
-console.log(backgroundMessage);
-// alert(backgroundMessage);
+// console.log(backgroundMessage);
+alert(backgroundMessage);
 
 
 
@@ -60,8 +60,8 @@ if (userInterestedInEducation === 'y') {
   educationMessage = failedAnswerMessage;
 }
 
-console.log(educationMessage);
-// alert(educationMessage);
+// console.log(educationMessage);
+alert(educationMessage);
 
 
 
@@ -76,8 +76,8 @@ if (userInterestedInWorkHistory === 'y') {
   workHistoryMessage = failedAnswerMessage;
 }
 
-console.log(workHistoryMessage);
-// alert(workHistoryMessage);
+// console.log(workHistoryMessage);
+alert(workHistoryMessage);
 
 
 
@@ -92,8 +92,8 @@ if (userInterestedInHobbies === 'y') {
   hobbiesMessage = failedAnswerMessage;
 }
 
-console.log(hobbiesMessage);
-// alert(hobbiesMessage);
+// console.log(hobbiesMessage);
+alert(hobbiesMessage);
 
 
 
@@ -123,8 +123,8 @@ if (badSport) {
   petMessage = failedAnswerMessage;
 }
 
-console.log(petMessage);
-// alert(petMessage);
+// console.log(petMessage);
+alert(petMessage);
 
 
 
