@@ -97,7 +97,7 @@ console.log(hobbiesMessage);
 
 
 
-var userInterestedInPet = prompt('Would you like to know about my personal hobbies? (y/n)').toLowerCase();
+var userInterestedInPet = prompt('Would you like to know about my pet cat? (y/n)').toLowerCase();
 
 // adding a possibility that the user did not want to see anything
 // true only if they answered 'n' to everything'
@@ -118,7 +118,7 @@ if (badSport) {
 } else if (userInterestedInPet === 'y') {
   petMessage = userName + ', you just made my day.';
 } else if (userInterestedInPet === 'n') {
-  petMessage = 'Well, I\'m showing you a picture of my cat anyways.';
+  petMessage = 'Well, ' + userName + ', I\'m showing you a picture of my cat anyways.';
 } else {
   petMessage = failedAnswerMessage;
 }
@@ -128,6 +128,27 @@ console.log(petMessage);
 
 
 
+// declaring a function to takes a user response and decides whether
+// to make a corresponding element visible
+
+// used https://www.w3schools.com/js/js_functions.asp as function format reference
+// and https://www.w3schools.com/jsref/prop_style_visibility.asp to understand changing the style property
+function hideElementIfUserDesires(userResponse, elId) {
+  if (userResponse === 'n') {
+    var elToHide = document.getElementById(elId);
+    elToHide.style.display = 'none';
+  }
+}
+
+// if the user is a badSport, they'll get everything
+// otherwise the list items 
+if (!badSport) {
+  hideElementIfUserDesires(userInterestedInBackground, 'background');
+  hideElementIfUserDesires(userInterestedInEducation, 'education');
+  hideElementIfUserDesires(userInterestedInWorkHistory, 'work-history');
+  hideElementIfUserDesires(userInterestedInHobbies, 'hobbies');
+  hideElementIfUserDesires(userInterestedInPet, 'pet');
+}
 
 
 
