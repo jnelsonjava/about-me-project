@@ -1,3 +1,5 @@
+/* used https://www.w3schools.com/css/default.asp as reference for most of the css */
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: honeydew;
@@ -7,12 +9,50 @@ h1 {
   font-size: 40px;
   margin: 15px;
   text-align: center;
-  background: yellowgreen;
-  color: floralwhite;
+  background: #beff38;
+  color: #006bb7;
 }
 
 p {
   font-size: 20px;
   margin-top: 5px;
   margin-bottom: 10px;
+  margin-left: 3%;
+}
+
+/* css indent wrapped text in a list: https://stackoverflow.com/questions/10428720/how-to-keep-indent-for-second-line-in-ordered-lists-via-css */
+ul {
+  list-style-type: circle;
+  list-style-position: outside;
+  margin-left: 5%;
+  margin-right: 15%;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+li {
+  margin-top: 3px;
+}
+
+strong {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#background, #pet, #work-history, #education, #hobbies {
+  color: darkorange;
+  background-color: rgb(99, 33, 38);
+}
+
+footer {
+  margin: 10px;
 }
