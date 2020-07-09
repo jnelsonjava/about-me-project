@@ -22,120 +22,133 @@ The responses to the questions will be along the lines of
 */
 
 var totalCorrectGuesses = 0;
+function askUserName() {
+  var userName = prompt('Welcome to a page about the author of the page. First, what\'s your name?');
+  var welcomeMessage = 'Welcome, ' + userName + '! I just have a few questions to make sure you get the information you want.';
 
-var userName = prompt('Welcome to a page about the author of the page. First, what\'s your name?');
-var welcomeMessage = 'Welcome, ' + userName + '! I just have a few questions to make sure you get the information you want.';
+  // console.log(welcomeMessage);
+  alert(welcomeMessage);
+  return userName;
+}
 
-// console.log(welcomeMessage);
-alert(welcomeMessage);
-
+var userName = askUserName();
 
 // saving a message to serve the user in case their responses weren't valid
 var failedAnswerMessage = 'I\'m sorry, I didn\'t understand. Make sure to answer "y" for yes or "n" for no. I\'ll assume that was a yes and move on.';
 
+function askBackgroundInterest() {
+  // found how to use .toLowerCase() here: https://www.w3schools.com/jsref/jsref_tolowercase. asp
+  var userInterestedInBackground = prompt('Would you like to know about where I\'m from? (y/n)  ').toLowerCase();
 
-// found how to use .toLowerCase() here: https://www.w3schools.com/jsref/jsref_tolowercase.asp
-var userInterestedInBackground = prompt('Would you like to know about where I\'m from? (y/n)').toLowerCase();
+  var backgroundMessage;
+  if (userInterestedInBackground === 'y') {
+    backgroundMessage = 'Thanks for your interest. I\'ll add that to the page.';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInBackground === 'n') {
+    backgroundMessage = 'That\'s fine, let\'s see if there\'s something else you would like to  know.';
+  } else if (userInterestedInBackground === '') {
+    backgroundMessage = failedAnswerMessage;
+  } else {
+    backgroundMessage = failedAnswerMessage;
+  }
 
-var backgroundMessage;
-if (userInterestedInBackground === 'y') {
-  backgroundMessage = 'Thanks for your interest. I\'ll add that to the page.';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInBackground === 'n') {
-  backgroundMessage = 'That\'s fine, let\'s see if there\'s something else you would like to know.';
-} else if (userInterestedInBackground === '') {
-  backgroundMessage = failedAnswerMessage;
-} else {
-  backgroundMessage = failedAnswerMessage;
+  // console.log(backgroundMessage);
+  alert(backgroundMessage);
 }
 
-// console.log(backgroundMessage);
-alert(backgroundMessage);
+askBackgroundInterest();
 
 
 
-var userInterestedInEducation = prompt('Would you like to know about my education? (y/n)').toLowerCase();
+function askEducationInterest() {
 
-var educationMessage;
-if (userInterestedInEducation === 'y') {
-  educationMessage = 'Great! Coming right up.';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInEducation === 'n') {
-  educationMessage = 'You know, maybe that\'s for the best. Hmmm, what\'s next...';
-} else {
-  educationMessage = failedAnswerMessage;
+  var userInterestedInEducation = prompt('Would you like to know about my education? (y/n)'). toLowerCase();
+
+  var educationMessage;
+  if (userInterestedInEducation === 'y') {
+    educationMessage = 'Great! Coming right up.';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInEducation === 'n') {
+    educationMessage = 'You know, maybe that\'s for the best. Hmmm, what\'s next...';
+  } else {
+    educationMessage = failedAnswerMessage;
+  }
+
+  // console.log(educationMessage);
+  alert(educationMessage);
 }
 
-// console.log(educationMessage);
-alert(educationMessage);
+askEducationInterest();
 
+function askWorkHistoryInterest() {
+  var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n) ').toLowerCase();
 
+  var workHistoryMessage;
+  if (userInterestedInWorkHistory === 'y') {
+    workHistoryMessage = 'I\'m flattered. Let me see what I can put together for you';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInWorkHistory === 'n') {
+    workHistoryMessage = 'No problem, moving on...';
+  } else {
+    workHistoryMessage = failedAnswerMessage;
+  }
 
-var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n)').toLowerCase();
-
-var workHistoryMessage;
-if (userInterestedInWorkHistory === 'y') {
-  workHistoryMessage = 'I\'m flattered. Let me see what I can put together for you';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInWorkHistory === 'n') {
-  workHistoryMessage = 'No problem, moving on...';
-} else {
-  workHistoryMessage = failedAnswerMessage;
+  // console.log(workHistoryMessage);
+  alert(workHistoryMessage);
 }
 
-// console.log(workHistoryMessage);
-alert(workHistoryMessage);
+askWorkHistoryInterest();
 
 
+function askHobbiesInterest() {
+  var userInterestedInHobbies = prompt('Would you like to know about my personal hobbies? (y/n) ').toLowerCase();
 
-var userInterestedInHobbies = prompt('Would you like to know about my personal hobbies? (y/n)').toLowerCase();
+  var hobbiesMessage;
+  if (userInterestedInHobbies === 'y') {
+    hobbiesMessage = 'Cool, I\'m excited to share my interests with you!';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInHobbies === 'n') {
+    hobbiesMessage = 'Sure, let\'s keep it simple.';
+  } else {
+    hobbiesMessage = failedAnswerMessage;
+  }
 
-var hobbiesMessage;
-if (userInterestedInHobbies === 'y') {
-  hobbiesMessage = 'Cool, I\'m excited to share my interests with you!';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInHobbies === 'n') {
-  hobbiesMessage = 'Sure, let\'s keep it simple.';
-} else {
-  hobbiesMessage = failedAnswerMessage;
+  // console.log(hobbiesMessage);
+  alert(hobbiesMessage);
 }
+askHobbiesInterest();
 
-// console.log(hobbiesMessage);
-alert(hobbiesMessage);
-
-
-
-var userInterestedInPet = prompt('Would you like to know about my pet cat? (y/n)').toLowerCase();
 
 // adding a possibility that the user did not want to see anything
 // true only if they answered 'n' to everything'
 // used this thread as a guide for formatting, though it is geared towards Java,
 // I thought it looked good:  https://stackoverflow.com/questions/12791614/code-formatting-dealing-with-long-invocations-operations-and-boolean-logic
-var badSport = (
-  userInterestedInBackground === 'n' &&
-  userInterestedInEducation === 'n' &&
-  userInterestedInWorkHistory === 'n' &&
-  userInterestedInHobbies === 'n' &&
-  userInterestedInPet === 'n'
-);
-// console.log(badSport);
+var badSport = !totalCorrectGuesses;
 
-var petMessage;
-if (badSport) {
-  petMessage = 'You know what, ' + userName + '? You\'ve answered no to everything. I\'m just going to give you all the info and leave you to it. Jeez, some people...';
-} else if (userInterestedInPet === 'y') {
-  petMessage = userName + ', you just made my day.';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInPet === 'n') {
-  petMessage = 'Well, ' + userName + ', I\'m showing you a picture of my cat anyways.';
-} else {
-  petMessage = failedAnswerMessage;
+//console.log(badSport);
+
+
+
+function askPetInterest() {
+  var userInterestedInPet = prompt('Would you like to know about my pet cat? (y/n)').toLowerCase();
+
+  var petMessage;
+  if (badSport && userInterestedInPet === 'n') {
+    petMessage = 'You know what, ' + userName + '? You\'ve answered no to everything. I\'m  just going to give you all the info and leave you to it. Jeez, some people...';
+  } else if (userInterestedInPet === 'y') {
+    petMessage = userName + ', you just made my day.';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInPet === 'n') {
+    petMessage = 'Well, ' + userName + ', I\'m showing you a picture of my cat anyways.';
+  } else {
+    petMessage = failedAnswerMessage;
+  }
+
+  // console.log(petMessage);
+  alert(petMessage);
 }
 
-// console.log(petMessage);
-alert(petMessage);
-
-
+askPetInterest();
 
 // declaring a function to takes a user response and decides whether
 // to make a corresponding element visible
