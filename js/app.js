@@ -98,22 +98,24 @@ function askWorkHistoryInterest() {
 
 askWorkHistoryInterest();
 
-var userInterestedInHobbies = prompt('Would you like to know about my personal hobbies? (y/n)').toLowerCase();
 
-var hobbiesMessage;
-if (userInterestedInHobbies === 'y') {
-  hobbiesMessage = 'Cool, I\'m excited to share my interests with you!';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInHobbies === 'n') {
-  hobbiesMessage = 'Sure, let\'s keep it simple.';
-} else {
-  hobbiesMessage = failedAnswerMessage;
+function askHobbiesInterest() {
+  var userInterestedInHobbies = prompt('Would you like to know about my personal hobbies? (y/n) ').toLowerCase();
+
+  var hobbiesMessage;
+  if (userInterestedInHobbies === 'y') {
+    hobbiesMessage = 'Cool, I\'m excited to share my interests with you!';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInHobbies === 'n') {
+    hobbiesMessage = 'Sure, let\'s keep it simple.';
+  } else {
+    hobbiesMessage = failedAnswerMessage;
+  }
+
+  // console.log(hobbiesMessage);
+  alert(hobbiesMessage);
 }
-
-// console.log(hobbiesMessage);
-alert(hobbiesMessage);
-
-
+askHobbiesInterest();
 
 var userInterestedInPet = prompt('Would you like to know about my pet cat? (y/n)').toLowerCase();
 
