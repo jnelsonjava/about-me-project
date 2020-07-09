@@ -28,9 +28,10 @@ function askUserName() {
 
   // console.log(welcomeMessage);
   alert(welcomeMessage);
+  return userName;
 }
 
-askUserName();
+var userName = askUserName();
 
 // saving a message to serve the user in case their responses weren't valid
 var failedAnswerMessage = 'I\'m sorry, I didn\'t understand. Make sure to answer "y" for yes or "n" for no. I\'ll assume that was a yes and move on.';
@@ -117,26 +118,22 @@ function askHobbiesInterest() {
 }
 //askHobbiesInterest();
 
-var userInterestedInPet = prompt('Would you like to know about my pet cat? (y/n)').toLowerCase();
 
 // adding a possibility that the user did not want to see anything
 // true only if they answered 'n' to everything'
 // used this thread as a guide for formatting, though it is geared towards Java,
 // I thought it looked good:  https://stackoverflow.com/questions/12791614/code-formatting-dealing-with-long-invocations-operations-and-boolean-logic
-var badSport = (
-  userInterestedInBackground === 'n' &&
-  userInterestedInEducation === 'n' &&
-  userInterestedInWorkHistory === 'n' &&
-  userInterestedInHobbies === 'n' &&
-  userInterestedInPet === 'n'
-);
-// console.log(badSport);
+var badSport = !totalCorrectGuesses;
+
+//console.log(badSport);
+
 
 
 function askPetInterest() {
+  var userInterestedInPet = prompt('Would you like to know about my pet cat? (y/n)').toLowerCase();
 
   var petMessage;
-  if (badSport) {
+  if (badSport && userInterestedInPet === 'n') {
     petMessage = 'You know what, ' + userName + '? You\'ve answered no to everything. I\'m  just going to give you all the info and leave you to it. Jeez, some people...';
   } else if (userInterestedInPet === 'y') {
     petMessage = userName + ', you just made my day.';
