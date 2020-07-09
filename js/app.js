@@ -35,26 +35,27 @@ askUserName();
 // saving a message to serve the user in case their responses weren't valid
 var failedAnswerMessage = 'I\'m sorry, I didn\'t understand. Make sure to answer "y" for yes or "n" for no. I\'ll assume that was a yes and move on.';
 
+function askBackgroundInterest() {
+  // found how to use .toLowerCase() here: https://www.w3schools.com/jsref/jsref_tolowercase. asp
+  var userInterestedInBackground = prompt('Would you like to know about where I\'m from? (y/n)  ').toLowerCase();
 
-// found how to use .toLowerCase() here: https://www.w3schools.com/jsref/jsref_tolowercase.asp
-var userInterestedInBackground = prompt('Would you like to know about where I\'m from? (y/n)').toLowerCase();
+  var backgroundMessage;
+  if (userInterestedInBackground === 'y') {
+    backgroundMessage = 'Thanks for your interest. I\'ll add that to the page.';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInBackground === 'n') {
+    backgroundMessage = 'That\'s fine, let\'s see if there\'s something else you would like to  know.';
+  } else if (userInterestedInBackground === '') {
+    backgroundMessage = failedAnswerMessage;
+  } else {
+    backgroundMessage = failedAnswerMessage;
+  }
 
-var backgroundMessage;
-if (userInterestedInBackground === 'y') {
-  backgroundMessage = 'Thanks for your interest. I\'ll add that to the page.';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInBackground === 'n') {
-  backgroundMessage = 'That\'s fine, let\'s see if there\'s something else you would like to know.';
-} else if (userInterestedInBackground === '') {
-  backgroundMessage = failedAnswerMessage;
-} else {
-  backgroundMessage = failedAnswerMessage;
+  // console.log(backgroundMessage);
+  alert(backgroundMessage);
 }
 
-// console.log(backgroundMessage);
-alert(backgroundMessage);
-
-
+askBackgroundInterest();
 
 var userInterestedInEducation = prompt('Would you like to know about my education? (y/n)').toLowerCase();
 
