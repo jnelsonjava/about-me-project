@@ -57,21 +57,27 @@ function askBackgroundInterest() {
 
 askBackgroundInterest();
 
-var userInterestedInEducation = prompt('Would you like to know about my education? (y/n)').toLowerCase();
 
-var educationMessage;
-if (userInterestedInEducation === 'y') {
-  educationMessage = 'Great! Coming right up.';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInEducation === 'n') {
-  educationMessage = 'You know, maybe that\'s for the best. Hmmm, what\'s next...';
-} else {
-  educationMessage = failedAnswerMessage;
+
+function askEducationInterest() {
+
+  var userInterestedInEducation = prompt('Would you like to know about my education? (y/n)'). toLowerCase();
+
+  var educationMessage;
+  if (userInterestedInEducation === 'y') {
+    educationMessage = 'Great! Coming right up.';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInEducation === 'n') {
+    educationMessage = 'You know, maybe that\'s for the best. Hmmm, what\'s next...';
+  } else {
+    educationMessage = failedAnswerMessage;
+  }
+
+  // console.log(educationMessage);
+  alert(educationMessage);
 }
 
-// console.log(educationMessage);
-alert(educationMessage);
-
+askEducationInterest();
 
 
 var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n)').toLowerCase();
