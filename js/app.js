@@ -56,7 +56,7 @@ function askBackgroundInterest() {
   alert(backgroundMessage);
 }
 
-//askBackgroundInterest();
+askBackgroundInterest();
 
 
 
@@ -78,7 +78,7 @@ function askEducationInterest() {
   alert(educationMessage);
 }
 
-//askEducationInterest();
+askEducationInterest();
 
 function askWorkHistoryInterest() {
   var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n) ').toLowerCase();
@@ -97,7 +97,7 @@ function askWorkHistoryInterest() {
   alert(workHistoryMessage);
 }
 
-//askWorkHistoryInterest();
+askWorkHistoryInterest();
 
 
 function askHobbiesInterest() {
@@ -116,7 +116,7 @@ function askHobbiesInterest() {
   // console.log(hobbiesMessage);
   alert(hobbiesMessage);
 }
-//askHobbiesInterest();
+askHobbiesInterest();
 
 
 // adding a possibility that the user did not want to see anything
