@@ -22,13 +22,15 @@ The responses to the questions will be along the lines of
 */
 
 var totalCorrectGuesses = 0;
+function askUserName() {
+  var userName = prompt('Welcome to a page about the author of the page. First, what\'s your name?');
+  var welcomeMessage = 'Welcome, ' + userName + '! I just have a few questions to make sure you get the information you want.';
 
-var userName = prompt('Welcome to a page about the author of the page. First, what\'s your name?');
-var welcomeMessage = 'Welcome, ' + userName + '! I just have a few questions to make sure you get the information you want.';
+  // console.log(welcomeMessage);
+  alert(welcomeMessage);
+}
 
-// console.log(welcomeMessage);
-alert(welcomeMessage);
-
+askUserName();
 
 // saving a message to serve the user in case their responses weren't valid
 var failedAnswerMessage = 'I\'m sorry, I didn\'t understand. Make sure to answer "y" for yes or "n" for no. I\'ll assume that was a yes and move on.';
