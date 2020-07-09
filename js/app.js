@@ -79,23 +79,24 @@ function askEducationInterest() {
 
 askEducationInterest();
 
+function askWorkHistoryInterest() {
+  var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n) ').toLowerCase();
 
-var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n)').toLowerCase();
+  var workHistoryMessage;
+  if (userInterestedInWorkHistory === 'y') {
+    workHistoryMessage = 'I\'m flattered. Let me see what I can put together for you';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInWorkHistory === 'n') {
+    workHistoryMessage = 'No problem, moving on...';
+  } else {
+    workHistoryMessage = failedAnswerMessage;
+  }
 
-var workHistoryMessage;
-if (userInterestedInWorkHistory === 'y') {
-  workHistoryMessage = 'I\'m flattered. Let me see what I can put together for you';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInWorkHistory === 'n') {
-  workHistoryMessage = 'No problem, moving on...';
-} else {
-  workHistoryMessage = failedAnswerMessage;
+  // console.log(workHistoryMessage);
+  alert(workHistoryMessage);
 }
 
-// console.log(workHistoryMessage);
-alert(workHistoryMessage);
-
-
+askWorkHistoryInterest();
 
 var userInterestedInHobbies = prompt('Would you like to know about my personal hobbies? (y/n)').toLowerCase();
 
