@@ -163,11 +163,12 @@ if (!badSport) {
 
 /*
 Adding a number guessing game for the user.
-The number is 35 (out of 40).
+The number is random (out of 40).
 If the user guesses wrong, they'll be alerted if they are too high or too low and given another try.
 If they guess correctly or miss 4 guesses, then they will be exited out of the loop and given an appropriate response.
 */
 var correctNumber = 35;
+correctNumber =  Math.floor(Math.random() * 41);
 
 var userGuess = parseInt(prompt('Hey ' + userName + ', let\'s play a game. I\'m thinking of a number between 0 and 40. Try to guess it! I\'ll give you 4 tries...'));
 var correctGuessMessage = 'You can see into my mind!! Great guessing. The number was ' + correctNumber + '.';
@@ -212,7 +213,7 @@ alert('Let\'s play another game! Try to guess one of my favorite animals. I\'ll 
 
 var userAnimalGuess;
 var userGuessIsCorrect = false;
-for (var i = 0; i < 6; i++) {
+for (i = 0; i < 6; i++) {
 
   userAnimalGuess = prompt('What is one of my favorite animals? This is guess number ' + (i + 1)).toLowerCase();
 
@@ -228,7 +229,7 @@ for (var i = 0; i < 6; i++) {
     totalCorrectGuesses++; // incrementing good or correct answers
     break;
   } else {
-    alert('Sorry, that\'s not on my top animals list.')
+    alert('Sorry, that\'s not on my top animals list.');
   }
 
 }
@@ -246,7 +247,7 @@ var commendation = [
   'Better luck next time.',
   'Not bad! Maybe worth another try.',
   'Good show, good show.',
-  'Well done. I hope you feel good about how you\;ve done, because I think it\'s great',
+  'Well done. I hope you feel good about how you\'ve done, because I think it\'s great',
   'Wow. You are a great guesser!',
   'You\'re the best around. Nothin\'s ever gonna keep you down.'
 ];

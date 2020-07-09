@@ -53,6 +53,14 @@ img {
   background-color: rgb(99, 33, 38);
 }
 
+ol {
+  list-style-type: upper-roman;
+  list-style-position: outside;
+  margin-left: 5%;
+  margin-right: 20%;
+  line-height: 2em;
+}
+
 footer {
   margin: 10px;
 }
