@@ -55,7 +55,7 @@ function askBackgroundInterest() {
   alert(backgroundMessage);
 }
 
-askBackgroundInterest();
+//askBackgroundInterest();
 
 
 
@@ -77,7 +77,7 @@ function askEducationInterest() {
   alert(educationMessage);
 }
 
-askEducationInterest();
+//askEducationInterest();
 
 function askWorkHistoryInterest() {
   var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n) ').toLowerCase();
@@ -96,7 +96,7 @@ function askWorkHistoryInterest() {
   alert(workHistoryMessage);
 }
 
-askWorkHistoryInterest();
+//askWorkHistoryInterest();
 
 
 function askHobbiesInterest() {
@@ -115,7 +115,7 @@ function askHobbiesInterest() {
   // console.log(hobbiesMessage);
   alert(hobbiesMessage);
 }
-askHobbiesInterest();
+//askHobbiesInterest();
 
 var userInterestedInPet = prompt('Would you like to know about my pet cat? (y/n)').toLowerCase();
 
@@ -132,22 +132,26 @@ var badSport = (
 );
 // console.log(badSport);
 
-var petMessage;
-if (badSport) {
-  petMessage = 'You know what, ' + userName + '? You\'ve answered no to everything. I\'m just going to give you all the info and leave you to it. Jeez, some people...';
-} else if (userInterestedInPet === 'y') {
-  petMessage = userName + ', you just made my day.';
-  totalCorrectGuesses++; // incrementing good or correct answers
-} else if (userInterestedInPet === 'n') {
-  petMessage = 'Well, ' + userName + ', I\'m showing you a picture of my cat anyways.';
-} else {
-  petMessage = failedAnswerMessage;
+
+function askPetInterest() {
+
+  var petMessage;
+  if (badSport) {
+    petMessage = 'You know what, ' + userName + '? You\'ve answered no to everything. I\'m  just going to give you all the info and leave you to it. Jeez, some people...';
+  } else if (userInterestedInPet === 'y') {
+    petMessage = userName + ', you just made my day.';
+    totalCorrectGuesses++; // incrementing good or correct answers
+  } else if (userInterestedInPet === 'n') {
+    petMessage = 'Well, ' + userName + ', I\'m showing you a picture of my cat anyways.';
+  } else {
+    petMessage = failedAnswerMessage;
+  }
+
+  // console.log(petMessage);
+  alert(petMessage);
 }
 
-// console.log(petMessage);
-alert(petMessage);
-
-
+askPetInterest();
 
 // declaring a function to takes a user response and decides whether
 // to make a corresponding element visible
