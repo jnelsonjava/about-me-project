@@ -54,9 +54,11 @@ function askBackgroundInterest() {
 
   // console.log(backgroundMessage);
   alert(backgroundMessage);
+
+  return userInterestedInBackground;
 }
 
-askBackgroundInterest();
+
 
 
 
@@ -76,9 +78,11 @@ function askEducationInterest() {
 
   // console.log(educationMessage);
   alert(educationMessage);
+
+  return userInterestedInEducation;
 }
 
-askEducationInterest();
+
 
 function askWorkHistoryInterest() {
   var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n) ').toLowerCase();
@@ -95,9 +99,11 @@ function askWorkHistoryInterest() {
 
   // console.log(workHistoryMessage);
   alert(workHistoryMessage);
+
+  return userInterestedInWorkHistory;
 }
 
-askWorkHistoryInterest();
+
 
 
 function askHobbiesInterest() {
@@ -115,17 +121,10 @@ function askHobbiesInterest() {
 
   // console.log(hobbiesMessage);
   alert(hobbiesMessage);
+
+  return userInterestedInHobbies;
 }
-askHobbiesInterest();
 
-
-// adding a possibility that the user did not want to see anything
-// true only if they answered 'n' to everything'
-// used this thread as a guide for formatting, though it is geared towards Java,
-// I thought it looked good:  https://stackoverflow.com/questions/12791614/code-formatting-dealing-with-long-invocations-operations-and-boolean-logic
-var badSport = !totalCorrectGuesses;
-
-//console.log(badSport);
 
 
 
@@ -146,9 +145,11 @@ function askPetInterest() {
 
   // console.log(petMessage);
   alert(petMessage);
+
+  return userInterestedInPet;
 }
 
-askPetInterest();
+
 
 // declaring a function to takes a user response and decides whether
 // to make a corresponding element visible
@@ -162,6 +163,20 @@ function hideElementIfUserDesires(userResponse, elId) {
   }
 }
 
+var userInterestedInBackground = askBackgroundInterest();
+var userInterestedInEducation = askEducationInterest();
+var userInterestedInWorkHistory = askWorkHistoryInterest();
+var userInterestedInHobbies = askHobbiesInterest();
+// adding a possibility that the user did not want to see anything
+// true only if they answered 'n' to everything'
+// used this thread as a guide for formatting, though it is geared towards Java,
+// I thought it looked good:  https://stackoverflow.com/questions/12791614/code-formatting-dealing-with-long-invocations-operations-and-boolean-logic
+var badSport = !totalCorrectGuesses;
+var userInterestedInPet = askPetInterest();
+
+
+
+
 // if the user is a badSport, they'll get everything
 // otherwise the list items
 if (!badSport) {
@@ -173,86 +188,90 @@ if (!badSport) {
 }
 
 
+function guessNumber() {
+  /*
+  Adding a number guessing game for the user.
+  The number is random (out of 40).
+  If the user guesses wrong, they'll be alerted if they are too high or too low and given another try.
+  If they guess correctly or miss 4 guesses, then they will be exited out of the loop and given an appropriate  response.
+  */
+  var correctNumber = 35;
+  correctNumber =  Math.floor(Math.random() * 41);
 
-/*
-Adding a number guessing game for the user.
-The number is random (out of 40).
-If the user guesses wrong, they'll be alerted if they are too high or too low and given another try.
-If they guess correctly or miss 4 guesses, then they will be exited out of the loop and given an appropriate response.
-*/
-var correctNumber = 35;
-correctNumber =  Math.floor(Math.random() * 41);
+  var userGuess = parseInt(prompt('Hey ' + userName + ', let\'s play a game. I\'m thinking of a number between 0 and  40. Try to guess it! I\'ll give you 4 tries...'));
+  var correctGuessMessage = 'You can see into my mind!! Great guessing. The number was ' + correctNumber + '.';
+  var incorrectGuessMessage = 'That\'s not it. The number I\'m thinking of is ';
 
-var userGuess = parseInt(prompt('Hey ' + userName + ', let\'s play a game. I\'m thinking of a number between 0 and 40. Try to guess it! I\'ll give you 4 tries...'));
-var correctGuessMessage = 'You can see into my mind!! Great guessing. The number was ' + correctNumber + '.';
-var incorrectGuessMessage = 'That\'s not it. The number I\'m thinking of is ';
-
-// referenced for break statement https://www.w3schools.com/js/js_break.asp
-for (var i = 0; i < 3; i++) {
-  if (userGuess === correctNumber) {
-    // console.log(correctGuessMessage);
-    alert(correctGuessMessage);
-    totalCorrectGuesses++; // incrementing good or correct answers
-    break;
-  } else if (userGuess < correctNumber) {
-    // console.log(incorrectGuessMessage + 'higher than ' + userGuess + '.');
-    alert(incorrectGuessMessage + 'higher than ' + userGuess + '.');
-  } else if (userGuess > correctNumber) {
-    // console.log(incorrectGuessMessage + 'lower than ' + userGuess + '.');
-    alert(incorrectGuessMessage + 'lower than ' + userGuess + '.');
-  } else {
-    // console.log('I didn\'t understand that input, so I\'m assuming it was not correct');
-    alert('I didn\'t understand that input, so I\'m assuming it was not correct');
-  }
-  userGuess = parseInt(prompt('Try again! (between 0 and 40)'));
-}
-
-if (userGuess !== correctNumber) {
-  alert('Sorry, that was your last guess. The correct answer was ' + correctNumber + '. Maybe next time.');
-}
-
-
-
-/*
-Playing another guessing game with the user.
-The user will be prompted to guess one of my favorite aniimals.
-The list of acceptable answers is held in an array.
-They will have 6 attempts, and if they guess correct it will stop prompting them for more guesses.
-*/
-
-var favAnimals = ['cat', 'cats', 'dog', 'dogs', 'bunny', 'bunnies', 'rabbit', 'rabbits'];
-
-alert('Let\'s play another game! Try to guess one of my favorite animals. I\'ll give you 6 tries.');
-
-var userAnimalGuess;
-var userGuessIsCorrect = false;
-for (i = 0; i < 6; i++) {
-
-  userAnimalGuess = prompt('What is one of my favorite animals? This is guess number ' + (i + 1)).toLowerCase();
-
-  for (var j = 0; j < favAnimals.length; j++) {
-    if (userAnimalGuess === favAnimals[j]) {
-      userGuessIsCorrect = true;
+  // referenced for break statement https://www.w3schools.com/js/js_break.asp
+  for (var i = 0; i < 3; i++) {
+    if (userGuess === correctNumber) {
+      // console.log(correctGuessMessage);
+      alert(correctGuessMessage);
+      totalCorrectGuesses++; // incrementing good or correct answers
       break;
+    } else if (userGuess < correctNumber) {
+      // console.log(incorrectGuessMessage + 'higher than ' + userGuess + '.');
+      alert(incorrectGuessMessage + 'higher than ' + userGuess + '.');
+    } else if (userGuess > correctNumber) {
+      // console.log(incorrectGuessMessage + 'lower than ' + userGuess + '.');
+      alert(incorrectGuessMessage + 'lower than ' + userGuess + '.');
+    } else {
+      // console.log('I didn\'t understand that input, so I\'m assuming it was not correct');
+      alert('I didn\'t understand that input, so I\'m assuming it was not correct');
     }
+    userGuess = parseInt(prompt('Try again! (between 0 and 40)'));
   }
 
-  if (userGuessIsCorrect) {
-    alert('You got it! I love me some ' + userAnimalGuess + '!');
-    totalCorrectGuesses++; // incrementing good or correct answers
-    break;
-  } else {
-    alert('Sorry, that\'s not on my top animals list.');
+  if (userGuess !== correctNumber) {
+    alert('Sorry, that was your last guess. The correct answer was ' + correctNumber + '. Maybe next time.');
+  }
+}
+
+guessNumber();
+
+function guessAnimal() {
+  /*
+  Playing another guessing game with the user.
+  The user will be prompted to guess one of my favorite aniimals.
+  The list of acceptable answers is held in an array.
+  They will have 6 attempts, and if they guess correct it will stop prompting them for more guesses.
+  */
+
+  var favAnimals = ['cat', 'cats', 'dog', 'dogs', 'bunny', 'bunnies', 'rabbit', 'rabbits'];
+
+  alert('Let\'s play another game! Try to guess one of my favorite animals. I\'ll give you 6 tries.');
+
+  var userAnimalGuess;
+  var userGuessIsCorrect = false;
+  for (var i = 0; i < 6; i++) {
+
+    userAnimalGuess = prompt('What is one of my favorite animals? This is guess number ' + (i + 1)).toLowerCase();
+
+    for (var j = 0; j < favAnimals.length; j++) {
+      if (userAnimalGuess === favAnimals[j]) {
+        userGuessIsCorrect = true;
+        break;
+      }
+    }
+
+    if (userGuessIsCorrect) {
+      alert('You got it! I love me some ' + userAnimalGuess + '!');
+      totalCorrectGuesses++; // incrementing good or correct answers
+      break;
+    } else {
+      alert('Sorry, that\'s not on my top animals list.');
+    }
+
   }
 
+  // reference for random numbers https://stackoverflow.com/questions/1527803/  generating-random-whole-numbers-in-javascript-in-a-specific-range
+  if (!userGuessIsCorrect) {
+    var randomArrayIndex = Math.floor(Math.random() * favAnimals.length);
+    alert('Looks like that was your last guess. Here is one of the acceptable answers: ' + favAnimals [randomArrayIndex]);
+  }
 }
 
-// reference for random numbers https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
-if (!userGuessIsCorrect) {
-  var randomArrayIndex = Math.floor(Math.random() * favAnimals.length);
-  alert('Looks like that was your last guess. Here is one of the acceptable answers: ' + favAnimals[randomArrayIndex]);
-}
-
+guessAnimal();
 
 var commendation = [
   'Fritzi is dissapointed in you.',
