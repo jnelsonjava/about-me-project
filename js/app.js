@@ -54,9 +54,11 @@ function askBackgroundInterest() {
 
   // console.log(backgroundMessage);
   alert(backgroundMessage);
+
+  return userInterestedInBackground;
 }
 
-askBackgroundInterest();
+
 
 
 
@@ -76,9 +78,11 @@ function askEducationInterest() {
 
   // console.log(educationMessage);
   alert(educationMessage);
+
+  return userInterestedInEducation;
 }
 
-askEducationInterest();
+
 
 function askWorkHistoryInterest() {
   var userInterestedInWorkHistory = prompt('Would you like to know about my work history? (y/n) ').toLowerCase();
@@ -95,9 +99,11 @@ function askWorkHistoryInterest() {
 
   // console.log(workHistoryMessage);
   alert(workHistoryMessage);
+
+  return userInterestedInWorkHistory;
 }
 
-askWorkHistoryInterest();
+
 
 
 function askHobbiesInterest() {
@@ -115,17 +121,10 @@ function askHobbiesInterest() {
 
   // console.log(hobbiesMessage);
   alert(hobbiesMessage);
+
+  return userInterestedInHobbies;
 }
-askHobbiesInterest();
 
-
-// adding a possibility that the user did not want to see anything
-// true only if they answered 'n' to everything'
-// used this thread as a guide for formatting, though it is geared towards Java,
-// I thought it looked good:  https://stackoverflow.com/questions/12791614/code-formatting-dealing-with-long-invocations-operations-and-boolean-logic
-var badSport = !totalCorrectGuesses;
-
-//console.log(badSport);
 
 
 
@@ -146,9 +145,11 @@ function askPetInterest() {
 
   // console.log(petMessage);
   alert(petMessage);
+
+  return userInterestedInPet;
 }
 
-askPetInterest();
+
 
 // declaring a function to takes a user response and decides whether
 // to make a corresponding element visible
@@ -161,6 +162,20 @@ function hideElementIfUserDesires(userResponse, elId) {
     elToHide.style.display = 'none';
   }
 }
+
+var userInterestedInBackground = askBackgroundInterest();
+var userInterestedInEducation = askEducationInterest();
+var userInterestedInWorkHistory = askWorkHistoryInterest();
+var userInterestedInHobbies = askHobbiesInterest();
+// adding a possibility that the user did not want to see anything
+// true only if they answered 'n' to everything'
+// used this thread as a guide for formatting, though it is geared towards Java,
+// I thought it looked good:  https://stackoverflow.com/questions/12791614/code-formatting-dealing-with-long-invocations-operations-and-boolean-logic
+var badSport = !totalCorrectGuesses;
+var userInterestedInPet = askPetInterest();
+
+
+
 
 // if the user is a badSport, they'll get everything
 // otherwise the list items
