@@ -229,47 +229,49 @@ function guessNumber() {
 
 guessNumber();
 
+function guessAnimal() {
+  /*
+  Playing another guessing game with the user.
+  The user will be prompted to guess one of my favorite aniimals.
+  The list of acceptable answers is held in an array.
+  They will have 6 attempts, and if they guess correct it will stop prompting them for more guesses.
+  */
 
-/*
-Playing another guessing game with the user.
-The user will be prompted to guess one of my favorite aniimals.
-The list of acceptable answers is held in an array.
-They will have 6 attempts, and if they guess correct it will stop prompting them for more guesses.
-*/
+  var favAnimals = ['cat', 'cats', 'dog', 'dogs', 'bunny', 'bunnies', 'rabbit', 'rabbits'];
 
-var favAnimals = ['cat', 'cats', 'dog', 'dogs', 'bunny', 'bunnies', 'rabbit', 'rabbits'];
+  alert('Let\'s play another game! Try to guess one of my favorite animals. I\'ll give you 6 tries.');
 
-alert('Let\'s play another game! Try to guess one of my favorite animals. I\'ll give you 6 tries.');
+  var userAnimalGuess;
+  var userGuessIsCorrect = false;
+  for (var i = 0; i < 6; i++) {
 
-var userAnimalGuess;
-var userGuessIsCorrect = false;
-for (var i = 0; i < 6; i++) {
+    userAnimalGuess = prompt('What is one of my favorite animals? This is guess number ' + (i + 1)).toLowerCase();
 
-  userAnimalGuess = prompt('What is one of my favorite animals? This is guess number ' + (i + 1)).toLowerCase();
-
-  for (var j = 0; j < favAnimals.length; j++) {
-    if (userAnimalGuess === favAnimals[j]) {
-      userGuessIsCorrect = true;
-      break;
+    for (var j = 0; j < favAnimals.length; j++) {
+      if (userAnimalGuess === favAnimals[j]) {
+        userGuessIsCorrect = true;
+        break;
+      }
     }
+
+    if (userGuessIsCorrect) {
+      alert('You got it! I love me some ' + userAnimalGuess + '!');
+      totalCorrectGuesses++; // incrementing good or correct answers
+      break;
+    } else {
+      alert('Sorry, that\'s not on my top animals list.');
+    }
+
   }
 
-  if (userGuessIsCorrect) {
-    alert('You got it! I love me some ' + userAnimalGuess + '!');
-    totalCorrectGuesses++; // incrementing good or correct answers
-    break;
-  } else {
-    alert('Sorry, that\'s not on my top animals list.');
+  // reference for random numbers https://stackoverflow.com/questions/1527803/  generating-random-whole-numbers-in-javascript-in-a-specific-range
+  if (!userGuessIsCorrect) {
+    var randomArrayIndex = Math.floor(Math.random() * favAnimals.length);
+    alert('Looks like that was your last guess. Here is one of the acceptable answers: ' + favAnimals [randomArrayIndex]);
   }
-
 }
 
-// reference for random numbers https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
-if (!userGuessIsCorrect) {
-  var randomArrayIndex = Math.floor(Math.random() * favAnimals.length);
-  alert('Looks like that was your last guess. Here is one of the acceptable answers: ' + favAnimals[randomArrayIndex]);
-}
-
+guessAnimal();
 
 var commendation = [
   'Fritzi is dissapointed in you.',
