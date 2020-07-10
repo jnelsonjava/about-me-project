@@ -188,44 +188,46 @@ if (!badSport) {
 }
 
 
+function guessNumber() {
+  /*
+  Adding a number guessing game for the user.
+  The number is random (out of 40).
+  If the user guesses wrong, they'll be alerted if they are too high or too low and given another try.
+  If they guess correctly or miss 4 guesses, then they will be exited out of the loop and given an appropriate  response.
+  */
+  var correctNumber = 35;
+  correctNumber =  Math.floor(Math.random() * 41);
 
-/*
-Adding a number guessing game for the user.
-The number is random (out of 40).
-If the user guesses wrong, they'll be alerted if they are too high or too low and given another try.
-If they guess correctly or miss 4 guesses, then they will be exited out of the loop and given an appropriate response.
-*/
-var correctNumber = 35;
-correctNumber =  Math.floor(Math.random() * 41);
+  var userGuess = parseInt(prompt('Hey ' + userName + ', let\'s play a game. I\'m thinking of a number between 0 and  40. Try to guess it! I\'ll give you 4 tries...'));
+  var correctGuessMessage = 'You can see into my mind!! Great guessing. The number was ' + correctNumber + '.';
+  var incorrectGuessMessage = 'That\'s not it. The number I\'m thinking of is ';
 
-var userGuess = parseInt(prompt('Hey ' + userName + ', let\'s play a game. I\'m thinking of a number between 0 and 40. Try to guess it! I\'ll give you 4 tries...'));
-var correctGuessMessage = 'You can see into my mind!! Great guessing. The number was ' + correctNumber + '.';
-var incorrectGuessMessage = 'That\'s not it. The number I\'m thinking of is ';
-
-// referenced for break statement https://www.w3schools.com/js/js_break.asp
-for (var i = 0; i < 3; i++) {
-  if (userGuess === correctNumber) {
-    // console.log(correctGuessMessage);
-    alert(correctGuessMessage);
-    totalCorrectGuesses++; // incrementing good or correct answers
-    break;
-  } else if (userGuess < correctNumber) {
-    // console.log(incorrectGuessMessage + 'higher than ' + userGuess + '.');
-    alert(incorrectGuessMessage + 'higher than ' + userGuess + '.');
-  } else if (userGuess > correctNumber) {
-    // console.log(incorrectGuessMessage + 'lower than ' + userGuess + '.');
-    alert(incorrectGuessMessage + 'lower than ' + userGuess + '.');
-  } else {
-    // console.log('I didn\'t understand that input, so I\'m assuming it was not correct');
-    alert('I didn\'t understand that input, so I\'m assuming it was not correct');
+  // referenced for break statement https://www.w3schools.com/js/js_break.asp
+  for (var i = 0; i < 3; i++) {
+    if (userGuess === correctNumber) {
+      // console.log(correctGuessMessage);
+      alert(correctGuessMessage);
+      totalCorrectGuesses++; // incrementing good or correct answers
+      break;
+    } else if (userGuess < correctNumber) {
+      // console.log(incorrectGuessMessage + 'higher than ' + userGuess + '.');
+      alert(incorrectGuessMessage + 'higher than ' + userGuess + '.');
+    } else if (userGuess > correctNumber) {
+      // console.log(incorrectGuessMessage + 'lower than ' + userGuess + '.');
+      alert(incorrectGuessMessage + 'lower than ' + userGuess + '.');
+    } else {
+      // console.log('I didn\'t understand that input, so I\'m assuming it was not correct');
+      alert('I didn\'t understand that input, so I\'m assuming it was not correct');
+    }
+    userGuess = parseInt(prompt('Try again! (between 0 and 40)'));
   }
-  userGuess = parseInt(prompt('Try again! (between 0 and 40)'));
+
+  if (userGuess !== correctNumber) {
+    alert('Sorry, that was your last guess. The correct answer was ' + correctNumber + '. Maybe next time.');
+  }
 }
 
-if (userGuess !== correctNumber) {
-  alert('Sorry, that was your last guess. The correct answer was ' + correctNumber + '. Maybe next time.');
-}
-
+guessNumber();
 
 
 /*
@@ -241,7 +243,7 @@ alert('Let\'s play another game! Try to guess one of my favorite animals. I\'ll 
 
 var userAnimalGuess;
 var userGuessIsCorrect = false;
-for (i = 0; i < 6; i++) {
+for (var i = 0; i < 6; i++) {
 
   userAnimalGuess = prompt('What is one of my favorite animals? This is guess number ' + (i + 1)).toLowerCase();
 
