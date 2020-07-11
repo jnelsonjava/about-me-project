@@ -18,4 +18,5 @@ Building a webpage designed for a user to learn about me, the author.
   - [JS Reference](https://www.w3schools.com/jsref)
   - [Formatting Reference](https://stackoverflow.com/questions/12791614/code-formatting-dealing-with-long-invocations-operations-and-boolean-logic)
   - [Random Number Generation](https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range)
+  - [Indenting Reference](https://stackoverflow.com/questions/10428720/how-to-keep-indent-for-second-line-in-ordered-lists-via-css)
 
