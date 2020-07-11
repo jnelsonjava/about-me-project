@@ -1,89 +1,120 @@
-
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: honeydew;
+  background-image: linear-gradient(to right, rgba(140, 238, 13, 0.808),rgba(255, 208, 0, 0.507));
 }
 
 header {
-  border: dotted red 3px;
   overflow: auto;
-  height: 200px;
+  height: auto;
+  background: #beff38;
 }
 
 header h1 {
-  width: 50%;
-  float: left;
-  border: dotted red 5px;
   box-sizing: border-box;
-  font-size: 40px;
-  /* margin: 15px; */
+  float: left;
+  width: 50%;
+  height: 100px;
+  font-size: 80px;
   text-align: center;
-  background: #beff38;
-  color: #006bb7;
+  color: #5c6f23e0;
+  padding-top: 10px;
+}
+
+div.filler {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  height: 50px;
 }
 
 #head-list {
-  border: dotted red 5px;
   box-sizing: border-box;
-  width: 50%;
   float: left;
+  width: 50%;
+  height: 50px;
+  text-align: center;
 }
 
 #head-list li {
-  border: dotted red 5px;
   box-sizing: border-box;
   float: left;
-  font-size: small;
+  width: 33%;
+  height: 50%;
 }
 
-p {
+#head-list li:first-child {
+  margin-left: 17%;
+}
+
+main {
+  box-sizing: border-box;
+  overflow: auto;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 23px;
+  background-color: hsla(300, 80%, 90%, .7);
+  box-shadow: 1px 0px 8px 2px red;
+  border-radius: 10px;
+}
+
+div.column {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+}
+
+main p {
   font-size: 20px;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-bottom: 10px;
   margin-left: 3%;
+  margin-right: 8%;
+  text-decoration: underline;
 }
 
+main p:first-child {
+  text-decoration: none;
+}
 
-#about-me-list {
+main ul {
   list-style-type: circle;
   list-style-position: outside;
-  margin-left: 5%;
+  margin-left: 15%;
   margin-right: 15%;
   margin-top: 15px;
   line-height: 1.5;
 }
 
-li {
-  margin-top: 3px;
-}
-
-strong {
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 900;
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-#background, #pet, #work-history, #education, #hobbies {
-  color: darkorange;
-  background-color: rgb(99, 33, 38);
-}
-
-ol {
+main ol {
   list-style-type: upper-roman;
   list-style-position: outside;
-  margin-left: 5%;
-  margin-right: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 15px;
   line-height: 2em;
 }
 
-footer {
-  margin: 10px;
+img {
+  width: 90%;
+  margin-left: 5%;
 }
+
+footer {
+  box-sizing: border-box;
+  overflow: auto;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+}
+
+footer h2 {
+  box-sizing: border-box;
+  text-align: center;
+  height: 48px;
+  margin-top: 1px;
+  padding-top: 10px;
+}
+
