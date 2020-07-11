@@ -1,16 +1,39 @@
-/* used https://www.w3schools.com/css/default.asp as reference for most of the css */
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: honeydew;
 }
 
-h1 {
+header {
+  border: dotted red 3px;
+  overflow: auto;
+  height: 200px;
+}
+
+header h1 {
+  width: 50%;
+  float: left;
+  border: dotted red 5px;
+  box-sizing: border-box;
   font-size: 40px;
-  margin: 15px;
+  /* margin: 15px; */
   text-align: center;
   background: #beff38;
   color: #006bb7;
+}
+
+#head-list {
+  border: dotted red 5px;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+}
+
+#head-list li {
+  border: dotted red 5px;
+  box-sizing: border-box;
+  float: left;
+  font-size: small;
 }
 
 p {
@@ -20,8 +43,8 @@ p {
   margin-left: 3%;
 }
 
-/* css indent wrapped text in a list: https://stackoverflow.com/questions/10428720/how-to-keep-indent-for-second-line-in-ordered-lists-via-css */
-ul {
+
+#about-me-list {
   list-style-type: circle;
   list-style-position: outside;
   margin-left: 5%;
